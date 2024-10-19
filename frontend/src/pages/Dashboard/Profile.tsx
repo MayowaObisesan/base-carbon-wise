@@ -76,12 +76,12 @@ const Profile = () => {
   }, [isError]);
 
   useEffect(() => {
-    if (isLoading) {
-      toast.loading("Updating your Profile. Kindly hold", {
-        // description: "My description",
-        duration: 12000,
-      });
-    }
+    // if (isLoading) {
+    //   toast.loading("Updating your Profile. Kindly hold", {
+    //     // description: "My description",
+    //     duration: 12000,
+    //   });
+    // }
   }, [isLoading]);
 
   const handleGenderChange = (event: any) => {

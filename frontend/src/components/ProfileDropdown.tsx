@@ -13,6 +13,7 @@ import { LucidePower } from "lucide-react";
 import { shortenAddress, capitalize, roleMap } from "../utils";
 import { useAccount, useDisconnect } from "wagmi";
 import { useNavigate } from "react-router-dom";
+import CopyTextComponent from "./CopyToClipboard";
 
 export default function ProfileDropdown({
   isRegistered,
@@ -60,9 +61,20 @@ export default function ProfileDropdown({
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">
         <DropdownSection aria-label="Profile" showDivider>
-          <DropdownItem key="address" className="h-14 gap-2">
-            <p className="font-semibold">Signed in as</p>
-            <p className="font-semibold">{shortenAddress(address as string)}</p>
+          <DropdownItem
+            key="address"
+            className="h-14 gap-2 flex flex-row justify-between"
+            isReadOnly
+          >
+            <div className="flex flex-row justify-between">
+              <div>
+                <p className="font-semibold">Signed in as</p>
+                <p className="font-semibold">
+                  {shortenAddress(address as string)}
+                </p>
+              </div>
+              <CopyTextComponent textToCopy={address as string} />
+            </div>
           </DropdownItem>
           {/* Let's get started */}
           <DropdownItem
