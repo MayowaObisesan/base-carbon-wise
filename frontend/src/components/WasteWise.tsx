@@ -205,7 +205,7 @@ export function WasteWise() {
         <Wallet>
           <ConnectWallet className="bg-success-400 hover:bg-success rounded-2xl">
             <ConnectWalletText className="font-firaSans">
-              Sign in
+              Connect Wallet
             </ConnectWalletText>
           </ConnectWallet>
         </Wallet>
