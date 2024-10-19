@@ -42,7 +42,11 @@ const Register = () => {
     isSuccess,
   } = useWriteContract();
 
-  const { isLoading: settling, error, isSuccess: isSuccess2 } = useWaitForTransactionReceipt({
+  const {
+    isLoading: settling,
+    error,
+    isSuccess: isSuccess2,
+  } = useWaitForTransactionReceipt({
     confirmations: 1,
     hash,
   });
@@ -115,7 +119,7 @@ const Register = () => {
     <>
       {/* <Navbar /> */}
 
-      <div className="flex h-full px-4 lg:h-9/12">
+      <div className="flex h-full">
         <div className="relative flex flex-col justify-center items-center w-full lg:w-1/2 lg:mx-28 mx-1 lg:pl-8">
           <div className="absolute top-8 left-2 lg:-left-12">
             <Button
@@ -216,8 +220,7 @@ const Register = () => {
               </CardHeader>
               <CardBody>
                 <NLink
-                  // href={`https://base-sepolia.blockscout.com/tx/${hash}`}
-                  href={`https://sepolia-blockscout.lisk.com/tx/${hash}`}
+                  href={`https://base-sepolia.blockscout.com/tx/${hash}`}
                   isExternal
                 >
                   Confirm your transaction on-Chain
@@ -240,7 +243,7 @@ const Register = () => {
           >
             Register an Account
           </h1> */}
-          <div className="w-10/12 text-xl font-normal light:text-[#02582E] leading-[3]">
+          <div className="w-full text-xl font-normal light:text-[#02582E] leading-[3]">
             <h1 className="font-firaSans font-bold text-3xl my-8">
               We welcome you to the Green-side... 🤝
             </h1>
