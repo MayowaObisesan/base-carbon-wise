@@ -203,7 +203,7 @@ export function WasteWise() {
           )}
         </Button> */}
         <Wallet>
-          <ConnectWallet className="bg-success-400 hover:bg-success rounded-2xl">
+          <ConnectWallet className="bg-success hover:bg-success-700 dark:bg-success-400 dark:hover:bg-success rounded-2xl">
             <ConnectWalletText className="font-firaSans">
               Connect Wallet
             </ConnectWalletText>

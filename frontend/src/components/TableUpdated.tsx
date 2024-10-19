@@ -356,7 +356,7 @@ export default function TableUpdated({
               PLASTIC RECYCLED
             </TableColumn> */}
           </TableHeader>
-          <TableBody items={items} emptyContent={"No recyclers yet."}>
+          <TableBody items={items} emptyContent={`No ${tableTitle} yet.`}>
             {(item) => (
               <TableRow key={item.address} className="">
                 {(columnKey) => (

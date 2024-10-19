@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/button";
 import { LucideCopy } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "sonner";
 
@@ -10,7 +10,7 @@ const CopyTextComponent = ({ textToCopy }: { textToCopy: string }) => {
 
   const handleCopy = () => {
     setCopied(true);
-    toast.success("Text copied to clipboard");
+    toast.success("Text copied to clipboard", { duration: 1000 });
   };
 
   return (
