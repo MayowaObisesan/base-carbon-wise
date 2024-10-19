@@ -48,7 +48,7 @@ const Navbar = () => {
           <Logo />
         </div>
         <div className={"navbar-end gap-2 space-x-4"}>
-          <div className="flex-none">
+          <div className="flex-none place-items-center">
             {/* {isConnected && (company as datap)?.name !== "" && (
               <Button>
                 <Link to="/dashboard">Dashboard</Link>
@@ -56,8 +56,8 @@ const Navbar = () => {
             )} */}
 
             {isConnected && isRegistered && (
-              <Button className="hidden lg:block">
-                <Link to="/dashboard">Dashboard</Link>
+              <Button as={Link} to="/dashboard" className="hidden lg:flex">
+                Dashboard
               </Button>
             )}
 
@@ -111,6 +111,7 @@ const Navbar = () => {
               )}
             </ul>
           </div>
+
           <ThemeSwitcher />
           <WasteWise />
 

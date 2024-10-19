@@ -351,10 +351,9 @@ const Wallet = () => {
     }
   }, [isSuccess]);
 
-
   return (
     <section className="relative flex flex-col w-full p-4 space-y-12 lg:py-8">
-      <section className="w-full bg-base-100 flex flex-col space-y-4 lg:flex-row lg:p-4 rounded-xl lg:space-x-3 lg:space-y-0 overflow-x-auto">
+      <section className="w-full bg-background flex flex-col space-y-4 lg:flex-row lg:p-4 rounded-xl lg:space-x-3 lg:space-y-0 overflow-x-auto">
         <section className="relative w-full lg:w-6/12 h-90 lg:h-100 px-2 rounded-2xl overflow-x-auto bg-gradient-to-br from-yellow-500/10 to-emerald-500/40 lg:px-3 lg:py-0">
           <section className="h-60 lg:h-70 flex flex-col">
             <div className="w-full flex flex-row px-2 py-6 lg:py-6 lg:px-8">
@@ -481,24 +480,24 @@ const Wallet = () => {
               </div>
 
               <div className="stat">
-                <div className="stat-title text-xs lg:text-sm">
-                  XP Points
-                </div>
+                <div className="stat-title text-xs lg:text-sm">XP Points</div>
                 <div className="stat-value font-medium text-neutral/90 text-sm lg:text-2xl dark:text-base-content">
-                  {currentUser ? Number(currentUser?.xpoints) : currentUser?.xpoints}
+                  {currentUser
+                    ? Number(currentUser?.xpoints)
+                    : currentUser?.xpoints}
                 </div>
                 <div className="stat-desc">
                   Latest:{" "}
                   {recycledData?.data && !!(recycledData?.data as any).length
                     ? new Date(
-                      formatDate(
-                        Number(
-                          (recycledData.data as any)[
-                            (recycledData?.data as any)?.length - 1
-                          ]?.timeRecycled
+                        formatDate(
+                          Number(
+                            (recycledData.data as any)[
+                              (recycledData?.data as any)?.length - 1
+                            ]?.timeRecycled
+                          )
                         )
-                      )
-                    ).toDateString()
+                      ).toDateString()
                     : "-"}
                 </div>
               </div>
@@ -563,8 +562,8 @@ const Wallet = () => {
             </div>
           </div> */}
         </section>
-        <section className="bg-base-100 flex-1 rounded-2xl shadow-2 p-2 lg:w-6/12 lg:flex-none lg:bg-base-100">
-          <div className="stats text-success-content shadow mx-auto w-full">
+        <section className="bg-default-50 flex-1 rounded-2xl shadow-2 p-2 lg:w-6/12 lg:flex-none lg:bg-default-50">
+          <div className="stats text-success-content mx-auto w-full bg-default-50">
             <div className="stat text-base-content">
               <div className="stat-figure text-base-content">
                 {/* <svg
@@ -636,7 +635,7 @@ const Wallet = () => {
             </div>
           </div>
 
-          <div id="chart" className="relative bg-base-200 mt-2 rounded-2xl">
+          <div id="chart" className="relative bg-background mt-2 rounded-2xl">
             <select
               title="Chart type"
               className="absolute top-2 right-3 z-1 select select-ghost select-sm w-xs max-w-xs"
@@ -656,7 +655,7 @@ const Wallet = () => {
         </section>
       </section>
 
-      <section className="p-2 lg:p-8 bg-base-100 rounded-xl">
+      <section className="p-2 lg:p-8 bg-background rounded-xl">
         <div className="font-bold text-2xl">Transactions</div>
         <div></div>
         <div className="overflow-x-auto my-4">

@@ -79,7 +79,7 @@ const Home = (props: Props) => {
           {/* <ChatCard /> */}
         </div>
 
-        <div className="flex flex-col gap-y-16 w-full lg:px-12">
+        <div className="flex flex-col gap-y-16 w-full lg:px-12 py-4">
           <TableOneUpdated />
           <TableTwoUpdated />
           <TableThreeUpdated />
