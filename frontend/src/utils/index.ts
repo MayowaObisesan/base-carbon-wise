@@ -19,61 +19,53 @@ export const ToastElem = (props: toastProp) => {
   const notificationCount = useNotificationCount();
 
   if (props.toastType === "success") {
-    return (
-      toast.success(props.message, {
-        onAutoClose: (t) => {
-          wastewiseStore
-            .setItem(t.id.toString(), {
-              id: t.id,
-              title: t.title,
-              datetime: new Date(),
-              type: t.type,
-            })
-            .then(function (_: any) {
-              setNotifCount(notificationCount);
-            });
-        },
-      })
-    )
+    return toast.success(props.message, {
+      onAutoClose: (t) => {
+        wastewiseStore
+          .setItem(t.id.toString(), {
+            id: t.id,
+            title: t.title,
+            datetime: new Date(),
+            type: t.type,
+          })
+          .then(function (_: any) {
+            setNotifCount(notificationCount);
+          });
+      },
+    });
   } else if (props.toastType === "error") {
-    return (
-      toast.error(props.message, {
-        onAutoClose: (t) => {
-          wastewiseStore
-            .setItem(t.id.toString(), {
-              id: t.id,
-              title: t.title,
-              datetime: new Date(),
-              type: t.type,
-            })
-            .then(function (_: any) {
-              setNotifCount(notificationCount);
-            });
-        },
-      })
-    )
+    return toast.error(props.message, {
+      onAutoClose: (t) => {
+        wastewiseStore
+          .setItem(t.id.toString(), {
+            id: t.id,
+            title: t.title,
+            datetime: new Date(),
+            type: t.type,
+          })
+          .then(function (_: any) {
+            setNotifCount(notificationCount);
+          });
+      },
+    });
   } else {
-    return (
-      toast("My first toast", {
-        onAutoClose: (t) => {
-          console.log(
-            `Toast with id ${t.id} has been closed automatically`
-          );
-          wastewiseStore
-            .setItem(t.id.toString(), {
-              id: t.id,
-              title: t.title,
-              datetime: new Date(),
-              type: t.type,
-            })
-            .then(function (_: any) {
-              setNotifCount(notificationCount);
-            });
-        },
-      })
-    );
+    return toast("My first toast", {
+      onAutoClose: (t) => {
+        console.log(`Toast with id ${t.id} has been closed automatically`);
+        wastewiseStore
+          .setItem(t.id.toString(), {
+            id: t.id,
+            title: t.title,
+            datetime: new Date(),
+            type: t.type,
+          })
+          .then(function (_: any) {
+            setNotifCount(notificationCount);
+          });
+      },
+    });
   }
-}
+};
 
 export const formatDateShort = (time: number) => {
   // Create a new Date object
@@ -84,18 +76,20 @@ export const formatDateShort = (time: number) => {
   const minutes = currentDate.getMinutes();
 
   // Determine whether it's AM or PM
-  const amOrPm = hours >= 12 ? 'pm' : 'am';
+  const amOrPm = hours >= 12 ? "pm" : "am";
 
   // Convert hours to 12-hour format
   const formattedHours = hours % 12 || 12;
 
   // Format the time string
-  const formattedTime = `${formattedHours}:${minutes < 10 ? '0' : ''}${minutes} ${amOrPm}`;
+  const formattedTime = `${formattedHours}:${
+    minutes < 10 ? "0" : ""
+  }${minutes} ${amOrPm}`;
 
   // Log the result
   // console.log(formattedTime);
   return formattedTime;
-}
+};
 
 export const formatDate = (time: number) => {
   // Convert the timestamp to milliseconds by multiplying it by 1000
@@ -133,18 +127,28 @@ export const formatDate = (time: number) => {
 };
 
 export function formatISOWithTimezone(date: Date) {
-  let tzOffset = -date.getTimezoneOffset();  // Get the timezone offset in minutes
-  let sign = tzOffset >= 0 ? '+' : '-';      // Determine if the offset is positive or negative
-  let pad = (num: number) => (num < 10 ? '0' : '') + Math.abs(num);  // Helper function to pad numbers to two digits
+  let tzOffset = -date.getTimezoneOffset(); // Get the timezone offset in minutes
+  let sign = tzOffset >= 0 ? "+" : "-"; // Determine if the offset is positive or negative
+  let pad = (num: number) => (num < 10 ? "0" : "") + Math.abs(num); // Helper function to pad numbers to two digits
 
   // Convert the date to the ISO 8601 format with the timezone offset
-  return date.getFullYear() +
-    '-' + pad(date.getMonth() + 1) +
-    '-' + pad(date.getDate()) +
-    'T' + pad(date.getHours()) +
-    ':' + pad(date.getMinutes()) +
-    ':' + pad(date.getSeconds()) +
-    sign + pad(Math.floor(tzOffset / 60)) + ':' + pad(tzOffset % 60);
+  return (
+    date.getFullYear() +
+    "-" +
+    pad(date.getMonth() + 1) +
+    "-" +
+    pad(date.getDate()) +
+    "T" +
+    pad(date.getHours()) +
+    ":" +
+    pad(date.getMinutes()) +
+    ":" +
+    pad(date.getSeconds()) +
+    sign +
+    pad(Math.floor(tzOffset / 60)) +
+    ":" +
+    pad(tzOffset % 60)
+  );
 }
 
 export const pinFileToIPFS = async (files: any) => {
@@ -183,4 +187,5 @@ export const roleMap = {
   0: "recycler",
   1: "admin",
   2: "verifier",
+  3: "company",
 };
