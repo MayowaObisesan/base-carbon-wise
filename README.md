@@ -26,13 +26,15 @@
 
 ## Deployed Contract Addresses on Base Sepolia
 
-- **USDToken** - 0xd13D1fEbB1c1B4cD2d331494eD6C709Ea454d576
+- **USDToken** - 0xf94A277cea999f1a1F664969F88bfec7fbd90A64
 
-- **CarbonWise** - 0xDaE55bE15252510f66c629198A2dE181Ca2A0537
+- **CarbonWise** - 0x7516A44fF7e991035bC98F6810e957a98c8F8Fb3
 
-- **EventMarketPlace** - 0x19Ebea8A04476F2d4f8734bd31eC26403d057702
+- **Carbon Credit Token** - 0xe055EC9ff05a73ddf9772e9Ec819b529098C332c
 
-- **CcMarketPlace** - 0x6Eb37b2f0B5C9cA138E706815734cccf854c0e34
+- **EventMarketPlace** - 0x720E9140553596E3E96089b3B3937e0EA9fBc557
+
+- **CcMarketPlace** - 0x1d3b5134F84D405A15EAbc7f62a4F3F97a55D4e2
 
 ## License
 
